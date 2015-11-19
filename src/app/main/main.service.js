@@ -7,7 +7,7 @@
 
   function mainService($http, $log) {
     var template = undefined;
-    var templateUrl = '/assets/template';
+    var templateUrl = 'assets/template';
     var templateConstants = {
       headline1: '###HEADLINE1###',
       headline2: '###HEADLINE2###',
