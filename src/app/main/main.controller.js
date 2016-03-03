@@ -6,14 +6,14 @@
     .controller('MainController', MainController);
 
   /** @ngInject */
-  function MainController(MainService, $uibModal) {
+  function MainController(MainService, TemplatesService, $uibModal) {
     var vm = this;
 
     vm.newsDto = {};
     vm.bbCode = '';
     vm.clear = clear;
     vm.createCode = createCode;
-    vm.initTemplate = initTemplate;
+    vm.getTemplates = getTemplates;
 
     function clear() {
       vm.newsDto = {};
@@ -39,9 +39,8 @@
       });
     }
 
-    function initTemplate() {
-      MainService.initTemplate();
+    function getTemplates() {
+      return TemplatesService.getTemplates();
     }
-    vm.initTemplate();
   }
 })();
