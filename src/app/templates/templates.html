@@ -1,0 +1,125 @@
+<div style="margin-bottom: 50px">
+  <acme-navbar creation-date="main.creationDate"></acme-navbar>
+</div>
+
+<div class="container">
+  <br/>
+  <h2>Template Manager</h2>
+  <br/>
+
+  <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+    <div class="panel panel-default">
+      <div class="panel-heading" role="tab" id="headingOne">
+        <h4 class="panel-title">
+            <a type="button" href="" ng-click="templates.isCollapsedConstants = !templates.isCollapsedConstants">Welche Variablen kann ich in meinem Template verwenden?</a>
+        </h4>
+      </div>
+      <div uib-collapse="templates.isCollapsedConstants">
+        <div class="panel-body">
+          <p ng-repeat="constant in templates.getTemplateConstants()">{{constant}}</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="panel panel-default">
+      <div class="panel-heading" role="tab" id="headingOne">
+        <h4 class="panel-title">
+          <a type="button" href="" ng-click="templates.isCollapsedStorage = !templates.isCollapsedStorage">Wie werden meine Templates gespeichert?</a>
+        </h4>
+      </div>
+      <div uib-collapse="templates.isCollapsedStorage">
+        <div class="panel-body">
+          <p>Die Templates werden mit Hilfe des Web Storage direkt im Browser gespeichert.<br/>
+          Damit bleiben die Templates so lange erhalten, bis der Web Storage explizit gelöscht wird.<br/>
+          Weitere Infos gibts <a href="https://de.wikipedia.org/wiki/Web_Storage" target="_blank">hier</a>.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <uib-tabset active="active">
+    <!-- Add new template tab -->
+    <uib-tab index="0" heading="Hinzufügen">
+
+      <uib-alert ng-if="templates.alert.msg"
+                 dismiss-on-timeout="3000"
+                 type="{{templates.alert.type}}"
+                 close="templates.closeAlert()"
+                 style="margin-top: 20px;">{{templates.alert.msg}}</uib-alert>
+
+      <form class="form-horizontal">
+        <br/>
+        <div class="form-group">
+          <label for="addName" class="col-sm-2 control-label">Name</label>
+          <div class="col-sm-10">
+            <input type="text" class="form-control" id="addName" placeholder="Template Name" ng-model="templates.addTemplateDto.name">
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="addTemplate" class="col-sm-2 control-label">Template</label>
+          <div class="col-sm-10">
+            <textarea class="form-control" rows="15" id="addTemplate" placeholder="Template Code" ng-model="templates.addTemplateDto.code"></textarea>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <div class="col-sm-offset-2 col-sm-10">
+            <button type="submit"
+                    class="btn btn-primary"
+                    ng-click="templates.addTemplate()"
+                    ng-disabled="!templates.addTemplateDto.name || !templates.addTemplateDto.code">Speichern</button>
+          </div>
+        </div>
+
+      </form>
+    </uib-tab>
+
+    <!-- Modify templates tab -->
+    <uib-tab index="1" heading="Ändern" disable="false">
+
+      <uib-alert ng-if="templates.alert.msg"
+                 dismiss-on-timeout="3000"
+                 type="{{templates.alert.type}}"
+                 close="templates.closeAlert()"
+                 style="margin-top: 20px;">{{templates.alert.msg}}</uib-alert>
+
+      <form class="form-horizontal">
+        <br/>
+        <div class="form-group">
+          <label for="changeName" class="col-sm-2 control-label">Name</label>
+          <div class="col-sm-10">
+            <select class="form-control"
+                    id="changeName"
+                    ng-model="templates.selectedChangeTemplate"
+                    ng-options="template.name for template in templates.getTemplates()"
+            >
+            </select>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="changeTemplate" class="col-sm-2 control-label">Template</label>
+          <div class="col-sm-10">
+            <textarea class="form-control" rows="15" id="changeTemplate" placeholder="Template Code" ng-model="templates.selectedChangeTemplate.code"></textarea>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <div class="col-sm-offset-2 col-sm-10">
+            <button type="submit"
+                    class="btn btn-primary"
+                    ng-click="templates.changeTemplate()"
+                    ng-disabled="!templates.selectedChangeTemplate.name || templates.selectedChangeTemplate.locked">Speichern</button>
+            <button type="button"
+                    class="btn btn-danger"
+                    ng-click="templates.deleteTemplate()"
+                    ng-disabled="!templates.selectedChangeTemplate.name || templates.selectedChangeTemplate.locked">Löschen</button>
+          </div>
+        </div>
+      </form>
+    </uib-tab>
+  </uib-tabset>
+
+
+</div>

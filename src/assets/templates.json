@@ -1,0 +1,11 @@
+{
+  "templates": [{
+    "name": "Back2Root",
+    "locked": true,
+    "code": "[CENTER]\n[IMG]http://back2root.net/logo.png[/IMG]\n●▬▬▬▬▬▬▬▬๑ .[B][FONT=Georgia][SIZE=7[COLOR=#00b3b3]N[/COLOR][/SIZE][/FONT][/B]\n[FONT=Georgia]EWSTIME[/FONT] ๑▬▬▬▬▬▬▬▬●\n[SIZE=5]\n[B][SIZE=6][B]###HEADLINE1###[/B][/SIZE][/B][/SIZE]\n[B][SIZE=4][B]###HEADLINE2###[/B][/SIZE][/B]\n[SIZE=5]\n[B][IMG]###IMG###[/IMG] [/B]\n\n[/SIZE]\n●▬▬▬▬▬▬▬▬๑◣_◢๑▬▬▬▬▬▬▬▬●[/CENTER]\n[bq=###SOURCE###]\n###TEXT###\n[/bq]\n[CENTER]\n●▬▬▬▬▬▬▬▬๑ .[B][FONT=Georgia][SIZE=7][COLOR=#00b3b3]K[/COLOR][/SIZE][/FONT][/B]\n[FONT=Georgia]ommentar[/FONT] ๑▬▬▬▬▬▬▬▬●\n###COMMENT###\n[/CENTER]"
+  }, {
+    "name": "Simpel",
+    "locked": true,
+    "code": "[CENTER]\n[B][SIZE=6][B]###HEADLINE1###[/B][/SIZE][/B]\n[B][SIZE=4][B]###HEADLINE2###[/B][/SIZE][/B]\n[/CENTER]\n\n[IMG]###IMG###[/IMG]\n\n[bq=###SOURCE###]\n###TEXT###\n[/bq]\n\n[CENTER]###COMMENT###[CENTER]"
+  }]
+}

@@ -1,4 +1,3 @@
-###TEMPLATE###=Back2Root
 [CENTER]
 [IMG]http://back2root.net/logo.png[/IMG]
 ●▬▬▬▬▬▬▬▬๑ .[B][FONT=Georgia][SIZE=7][COLOR=#00b3b3]N[/COLOR][/SIZE][/FONT][/B][FONT=Georgia]EWSTIME[/FONT] ๑▬▬▬▬▬▬▬▬●
@@ -17,3 +16,18 @@
 ●▬▬▬▬▬▬▬▬๑ .[B][FONT=Georgia][SIZE=7][COLOR=#00b3b3]K[/COLOR][/SIZE][/FONT][/B][FONT=Georgia]ommentar[/FONT] ๑▬▬▬▬▬▬▬▬●
 ###COMMENT###
 [/CENTER]
+
+-----
+
+[CENTER]
+[B][SIZE=6][B]###HEADLINE1###[/B][/SIZE][/B]
+[B][SIZE=4][B]###HEADLINE2###[/B][/SIZE][/B]
+[/CENTER]
+
+[IMG]###IMG###[/IMG]
+
+[bq=###SOURCE###]
+###TEXT###
+[/bq]
+
+[CENTER]###COMMENT###[CENTER]

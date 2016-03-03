@@ -6,8 +6,8 @@
     .run(runBlock);
 
   /** @ngInject */
-  function runBlock($log) {
-
+  function runBlock($log, TemplatesService) {
+    TemplatesService.initTemplates();
     $log.debug('runBlock end');
   }
 
