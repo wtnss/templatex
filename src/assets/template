@@ -2,32 +2,134 @@
 [IMG]http://back2root.net/logo.png[/IMG]
 ●▬▬▬▬▬▬▬▬๑ .[B][FONT=Georgia][SIZE=7][COLOR=#00b3b3]N[/COLOR][/SIZE][/FONT][/B][FONT=Georgia]EWSTIME[/FONT] ๑▬▬▬▬▬▬▬▬●
 [SIZE=5]
-[B][SIZE=6][B]###HEADLINE1###[/B][/SIZE][/B][/SIZE]
-[B][SIZE=4][B]###HEADLINE2###[/B][/SIZE][/B]
+[B][SIZE=6][B]###Überschrift 1###[/B][/SIZE][/B][/SIZE]
+[B][SIZE=4][B]###Überschrift 2###[/B][/SIZE][/B]
 [SIZE=5]
-[B][IMG]###IMG###[/IMG] [/B]
+[B][IMG]###Bild URL###[/IMG] [/B]
 
 [/SIZE]
 ●▬▬▬▬▬▬▬▬๑◣_◢๑▬▬▬▬▬▬▬▬●[/CENTER]
-[bq=###SOURCE###"]
-###TEXT###
+[bq=###Quelle###]
+###News Text|3###
 [/bq]
 [CENTER]
 ●▬▬▬▬▬▬▬▬๑ .[B][FONT=Georgia][SIZE=7][COLOR=#00b3b3]K[/COLOR][/SIZE][/FONT][/B][FONT=Georgia]ommentar[/FONT] ๑▬▬▬▬▬▬▬▬●
-###COMMENT###
+###Kommentar|3###
 [/CENTER]
 
 -----
 
 [CENTER]
-[B][SIZE=6][B]###HEADLINE1###[/B][/SIZE][/B]
-[B][SIZE=4][B]###HEADLINE2###[/B][/SIZE][/B]
+[B][SIZE=6][B]###Überschrift 1###[/B][/SIZE][/B]
+[B][SIZE=4][B]###Überschrift 2###[/B][/SIZE][/B]
 [/CENTER]
 
-[IMG]###IMG###[/IMG]
+[IMG]###Bild URL###[/IMG]
 
-[bq=###SOURCE###]
-###TEXT###
+[bq=###Quelle###]
+###News Text|3###
 [/bq]
 
-[CENTER]###COMMENT###[CENTER]
+[CENTER]###Kommentar|3###[CENTER]
+
+-----
+
+[CENTER][IMG]http://fs5.directupload.net/images/151128/3dogpjxe.png[/IMG]
+
+[B]===========[COLOR=#2b8ee5]===[/COLOR]===#[/B]
+[SIZE=5][I]###Release###[/I][/SIZE]
+[B]======[COLOR=#2b8ee5]===[/COLOR]========#[/B]
+
+[IMG]###Bild URL###[/IMG]
+
+###Info Text###
+
+
+
+
+
+[IMG]http://saved.im/mtg5nta1zzfr/b2r_info.png[/IMG]
+[SPOILER="NFO"][IMG]###NFO URL###[/IMG][/SPOILER]
+
+
+[IMG]http://saved.im/mtg5mje5mgxm/b2r_regeln.png[/IMG]
+
+1. Speedreport ist [B][COLOR=#2b8ee5]Pflicht[/COLOR][/B]!
+2. Fertigmeldung innerhalb von [U]24[/U] Stunden!
+3. Kein Rehack & Rescan des Servers
+4. Stro/Pub wird nach [I]3-5 [/I]Tagen gesäubert.
+5. [COLOR=#2b8ee5][I][B]Wer all diese Regeln einhält der kann mit weiteren Uploads von mir rechnen[/B][/I].[/COLOR]
+
+[IMG]http://saved.im/mtg5nta4dwcx/b2r_download.png[/IMG]
+
+Uploader: [B]###Uploader###[/B] | Größe: ###Größe### | Location: ###Location###  | Strodealer: ###Hacker###
+ServerID: ###ServerID###
+
+
+
+==[COLOR=#2b8ee5][B]#[/B][/COLOR]FTP
+[HIDE][CODE]###FTP Link###[/CODE][/HIDE]
+
+
+
+==[COLOR=#2b8ee5][B]#[/B][/COLOR]SFDL
+[HIDE]###SFDL Link###[/HIDE]
+[/CENTER]
+
+----
+
+[CENTER][IMG]http://fs5.directupload.net/images/151128/3dogpjxe.png[/IMG]
+
+[B]===========[COLOR=#2b8ee5]===[/COLOR]===#[/B]
+[SIZE=5][I]###Titel###[/I][/SIZE]
+[B]======[COLOR=#2b8ee5]===[/COLOR]========#[/B]
+
+[SPOILER="Content"]###Content|10###[/SPOILER]
+
+
+
+[IMG]http://saved.im/mtg5mje5mgxm/b2r_regeln.png[/IMG]
+
+1. Speedreport ist [B][COLOR=#2b8ee5]Pflicht[/COLOR][/B]!
+2. Fertigmeldung innerhalb von [U]24[/U] Stunden!
+3. Kein Rehack & Rescan des Servers
+4. Stro/Pub wird nach [I]3-5 [/I]Tagen gesäubert.
+5. [COLOR=#2b8ee5][I][B]Wer all diese Regeln einhält der kann mit weiteren Uploads von mir rechnen[/B][/I].[/COLOR]
+
+[IMG]http://saved.im/mtg5nta4dwcx/b2r_download.png[/IMG]
+
+Uploader: [B]###Uploader###[/B] | Größe: ###Größe### | Location: ###Location### | Strodealer: ###Hacker###
+ServerID: ###ServerID###
+
+
+
+==[COLOR=#2b8ee5][B]#[/B][/COLOR]FTP
+[HIDE][CODE]###FTP Link###[/CODE][/HIDE]
+
+
+
+[/CENTER]
+
+------
+
+[CENTER]
+[SIZE=5][B]###Release###[/B][/SIZE]
+
+[IMG]###Bild URL###[/IMG]
+
+###Info Text###
+
+
+[SPOILER="NFO"][IMG]###NFO URL###[/IMG][/SPOILER]
+
+Uploader: [B]###Uploader###[/B]
+Hacker: [B]###Hacker###[/B]
+Größe: [B]###Größe###[/B]
+Location: [B]###Location###[/B]
+
+[B]FTP[/B]
+[HIDE][CODE]###FTP Link###[/CODE][/HIDE]
+
+[B]SFDL[/B]
+[HIDE]###SFDL Link###[/HIDE]
+[/CENTER]

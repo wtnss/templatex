@@ -2,7 +2,7 @@
   'use strict';
 
   angular
-    .module('newsmaker')
+    .module('tplx')
     .directive('acmeNavbar', acmeNavbar);
 
   /** @ngInject */

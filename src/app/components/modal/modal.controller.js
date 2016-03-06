@@ -1,8 +1,8 @@
-(function() {
+(function () {
   'use strict';
 
   angular
-    .module('newsmaker')
+    .module('tplx')
     .controller('ModalInstanceController', ModalInstanceController);
 
   function ModalInstanceController($uibModalInstance, bbCode, title) {
