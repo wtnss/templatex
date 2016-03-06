@@ -2,10 +2,10 @@
   'use strict';
 
   angular
-    .module('newsmaker')
+    .module('tplx')
     .factory('MainService', mainService);
 
-  function mainService(TEMPLATE_CONSTANTS) {
+  function mainService() {
 
 
     //////////////////////////////////////////////////////////////////////////////////////////////////
@@ -16,13 +16,13 @@
     return service;
     //////////////////////////////////////////////////////////////////////////////////////////////////
 
-    function createCode(newsDto) {
-      var bbCode = newsDto.selectedTemplate.code;
-      angular.forEach(TEMPLATE_CONSTANTS, function(value, key) {
-        if (angular.isUndefined(newsDto[key])) {
-          newsDto[key] = '';
+    function createCode(selectedTemplate) {
+      var bbCode = selectedTemplate.code;
+      angular.forEach(selectedTemplate.variables, function(object) {
+        if (angular.isUndefined(object.value)) {
+          object.value = '';
         }
-        bbCode = bbCode.replace(value, newsDto[key]);
+        bbCode = bbCode.replace(object.placeholder, object.value);
       });
       return bbCode;
     }

@@ -1,26 +1,28 @@
-(function() {
+  (function() {
   'use strict';
 
   angular
-    .module('newsmaker')
+    .module('tplx')
     .controller('MainController', MainController);
 
   /** @ngInject */
   function MainController(MainService, TemplatesService, $uibModal) {
     var vm = this;
 
-    vm.newsDto = {};
+    vm.selectedTemplate = {};
     vm.bbCode = '';
     vm.clear = clear;
     vm.createCode = createCode;
     vm.getTemplates = getTemplates;
 
     function clear() {
-      vm.newsDto = {};
+      angular.forEach(vm.selectedTemplate.variables, function(object) {
+        object.value = undefined;
+      });
     }
 
     function createCode() {
-      vm.bbCode = MainService.createCode(vm.newsDto);
+      vm.bbCode = MainService.createCode(vm.selectedTemplate);
 
       $uibModal.open({
         animation: true,
@@ -33,7 +35,7 @@
             return vm.bbCode;
           },
           title: function () {
-            return 'News: BB-Code!';
+            return 'Your TemplateX Code';
           }
         }
       });

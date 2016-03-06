@@ -3,8 +3,8 @@
 </div>
 
 <div class="jumbotron text-center" style="border: 10px">
-  <h1><span class="glyphicon glyphicon-share" aria-hidden="true"></span> Newsmaker</h1>
-  <h3>Easily create your BB-Code!</h3>
+  <h1><span class="glyphicon glyphicon-share" aria-hidden="true"></span> TemplateX</h1>
+  <h3>easily create your own code!</h3>
 </div>
 
 <div class="container">
@@ -14,51 +14,46 @@
       <div class="col-sm-10">
         <select class="form-control"
                 id="inputTemplate"
-                ng-model="main.newsDto.selectedTemplate"
-                ng-options="template.name for template in main.getTemplates()"
+                ng-model="main.selectedTemplate"
+                ng-options="template.name group by template.category for template in main.getTemplates()"
         >
         </select>
       </div>
     </div>
-    <div class="form-group">
-      <label for="inputHeadline1" class="col-sm-2 control-label">Überschrift 1</label>
-      <div class="col-sm-10">
-        <input type="text" class="form-control" id="inputHeadline1" placeholder="Überschrift 1" ng-model="main.newsDto.headline1">
+
+    <!-- Create form depending on active template -->
+    <div class="form-group" ng-repeat="variable in main.selectedTemplate.variables">
+
+      <!-- Text Input -->
+      <div ng-if="variable.type === 'text'">
+        <label for="{{variable.name}}" class="col-sm-2 control-label">{{variable.name}}</label>
+        <div class="col-sm-10">
+          <input type="text"
+                 class="form-control"
+                 id="{{variable.name}}"
+                 placeholder="{{variable.name}}"
+                 ng-model="variable.value"
+                 autocomplete="off">
+        </div>
+      </div>
+
+      <!-- Textarea -->
+      <div ng-if="variable.type === 'textarea'">
+        <label for="{{variable.name}}" class="col-sm-2 control-label">{{variable.name}}</label>
+        <div class="col-sm-10">
+          <textarea class="form-control"
+                    rows="{{variable.size}}"
+                    id="{{variable.name}}"
+                    placeholder="{{variable.name}}"
+                    ng-model="variable.value">
+          </textarea>
+        </div>
       </div>
     </div>
-    <div class="form-group">
-      <label for="inputHeadline2" class="col-sm-2 control-label">Überschrift 2</label>
-      <div class="col-sm-10">
-        <input type="text" class="form-control" id="inputHeadline2" placeholder="Überschrift 2" ng-model="main.newsDto.headline2">
-      </div>
-    </div>
-    <div class="form-group">
-      <label for="inputImg" class="col-sm-2 control-label">Bild URL</label>
-      <div class="col-sm-10">
-        <input type="text" class="form-control" id="inputImg" placeholder="Bild URL" ng-model="main.newsDto.img">
-      </div>
-    </div>
-    <div class="form-group">
-      <label for="inputText" class="col-sm-2 control-label">Text</label>
-      <div class="col-sm-10">
-        <textarea class="form-control" rows="3" id="inputText" placeholder="Text" ng-model="main.newsDto.text"></textarea>
-      </div>
-    </div>
-    <div class="form-group">
-      <label for="inputSource" class="col-sm-2 control-label">Quelle</label>
-      <div class="col-sm-10">
-        <input type="text" class="form-control" id="inputSource" placeholder="Quelle" ng-model="main.newsDto.source">
-      </div>
-    </div>
-    <div class="form-group">
-      <label for="inputComment" class="col-sm-2 control-label">Kommentar</label>
-      <div class="col-sm-10">
-        <textarea class="form-control" rows="3" id="inputComment" placeholder="Text" ng-model="main.newsDto.comment"></textarea>
-      </div>
-    </div>
-    <div class="form-group">
+
+    <div class="form-group" ng-if="main.selectedTemplate.name">
       <div class="col-sm-offset-2 col-sm-10">
-        <button type="submit" class="btn btn-primary" ng-click="main.createCode()" ng-disabled="!main.newsDto.selectedTemplate">Create!</button>
+        <button type="submit" class="btn btn-primary" ng-click="main.createCode()">Create!</button>
         <button type="submit" class="btn btn-warning" ng-click="main.clear()">Clear</button>
       </div>
     </div>

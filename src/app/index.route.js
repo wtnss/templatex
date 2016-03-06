@@ -2,7 +2,7 @@
   'use strict';
 
   angular
-    .module('newsmaker')
+    .module('tplx')
     .config(routerConfig);
 
   /** @ngInject */

@@ -9,29 +9,57 @@
 
   <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
     <div class="panel panel-default">
-      <div class="panel-heading" role="tab" id="headingOne">
+      <div class="panel-heading" role="tab" id="headingVariables">
         <h4 class="panel-title">
-            <a type="button" href="" ng-click="templates.isCollapsedConstants = !templates.isCollapsedConstants">Welche Variablen kann ich in meinem Template verwenden?</a>
+            <a type="button" href="" ng-click="templates.collapse.variables = !templates.collapse.variables">Welche Platzhalter/Variablen kann ich in meinem Template verwenden?</a>
         </h4>
       </div>
-      <div uib-collapse="templates.isCollapsedConstants">
+      <div uib-collapse="templates.collapse.variables">
         <div class="panel-body">
-          <p ng-repeat="constant in templates.getTemplateConstants()">{{constant}}</p>
+          <p>Du kannst die Platzhalter in deinem Template völlig frei definieren.<br/>
+            Alles was zwischen zwei ### steht, wird von TemplateX als Platzhalter interpretiert.<br/>
+            Jeder Platzhalter bekommt ein eigenes Eingabefeld. Dieses erhält den Namen des Platzhalters.</p>
+          <p><strong>Beispiel für eine 1-zeilige Eingabe:</strong><br/>
+            ###Mein Platzhalter###</p>
+          <p><strong>Beispiel für eine mehrzeilige Eingabe:</strong><br/>
+            ###Mein großer Platzhalter|7###<br/>
+          <i>Die Zahl nach der | definiert die Anzahl an Zeilen für den Input.<br/>
+            Enthält der Platzhalter keine | hat das Eingabefeld automatisch nur eine Zeile.</i></p>
         </div>
       </div>
     </div>
 
     <div class="panel panel-default">
-      <div class="panel-heading" role="tab" id="headingOne">
+      <div class="panel-heading" role="tab" id="headingStorage">
         <h4 class="panel-title">
-          <a type="button" href="" ng-click="templates.isCollapsedStorage = !templates.isCollapsedStorage">Wie werden meine Templates gespeichert?</a>
+          <a type="button" href="" ng-click="templates.collapse.storage = !templates.collapse.storage">Wie werden meine eigenen Templates gespeichert?</a>
         </h4>
       </div>
-      <div uib-collapse="templates.isCollapsedStorage">
+      <div uib-collapse="templates.collapse.storage">
         <div class="panel-body">
           <p>Die Templates werden mit Hilfe des Web Storage direkt im Browser gespeichert.<br/>
-          Damit bleiben die Templates so lange erhalten, bis der Web Storage explizit gelöscht wird.<br/>
+          Damit bleiben die Templates so lange erhalten, bis der Web Storage (oder Cookies) explizit gelöscht wird.<br/>
           Weitere Infos gibts <a href="https://de.wikipedia.org/wiki/Web_Storage" target="_blank">hier</a>.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="panel panel-default">
+      <div class="panel-heading" role="tab" id="headingDefaults">
+        <h4 class="panel-title">
+          <a type="button" href="" ng-click="templates.collapse.defaults = !templates.collapse.defaults">Kann ich die Default Templates ausblenden?</a>
+        </h4>
+      </div>
+      <div uib-collapse="templates.collapse.defaults">
+        <div class="panel-body">
+          <p>Kein Problem:</p>
+          <div class="checkbox">
+            <label>
+              <input type="checkbox"
+                     ng-model="templates.getDefaultTemplateSettings().isDisabled"
+                     ng-change="templates.changeDefaultTemplateSettings()"> Default Templates ausblenden
+            </label>
+          </div>
         </div>
       </div>
     </div>
@@ -52,14 +80,35 @@
         <div class="form-group">
           <label for="addName" class="col-sm-2 control-label">Name</label>
           <div class="col-sm-10">
-            <input type="text" class="form-control" id="addName" placeholder="Template Name" ng-model="templates.addTemplateDto.name">
+            <input type="text"
+                   class="form-control"
+                   id="addName"
+                   placeholder="Template Name"
+                   ng-model="templates.addTemplateDto.name"
+                   autocomplete="off">
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="addCategory" class="col-sm-2 control-label">Kategorie</label>
+          <div class="col-sm-10">
+            <input type="text"
+                   class="form-control"
+                   id="addCategory"
+                   placeholder="Kategorie"
+                   ng-model="templates.addTemplateDto.category"
+                   autocomplete="off">
           </div>
         </div>
 
         <div class="form-group">
           <label for="addTemplate" class="col-sm-2 control-label">Template</label>
           <div class="col-sm-10">
-            <textarea class="form-control" rows="15" id="addTemplate" placeholder="Template Code" ng-model="templates.addTemplateDto.code"></textarea>
+            <textarea class="form-control"
+                      rows="15"
+                      id="addTemplate"
+                      placeholder="Template Code"
+                      ng-model="templates.addTemplateDto.code"></textarea>
           </div>
         </div>
 
@@ -68,7 +117,7 @@
             <button type="submit"
                     class="btn btn-primary"
                     ng-click="templates.addTemplate()"
-                    ng-disabled="!templates.addTemplateDto.name || !templates.addTemplateDto.code">Speichern</button>
+                    ng-disabled="!templates.addTemplateDto.name || !templates.addTemplateDto.category || !templates.addTemplateDto.code">Speichern</button>
           </div>
         </div>
 
@@ -87,34 +136,67 @@
       <form class="form-horizontal">
         <br/>
         <div class="form-group">
-          <label for="changeName" class="col-sm-2 control-label">Name</label>
+          <label for="changeSelect" class="col-sm-2 control-label">Auswahl</label>
           <div class="col-sm-10">
             <select class="form-control"
-                    id="changeName"
+                    id="changeSelect"
                     ng-model="templates.selectedChangeTemplate"
-                    ng-options="template.name for template in templates.getTemplates()"
+                    ng-options="template.name group by template.category for template in templates.getTemplates()"
             >
             </select>
           </div>
         </div>
 
-        <div class="form-group">
-          <label for="changeTemplate" class="col-sm-2 control-label">Template</label>
-          <div class="col-sm-10">
-            <textarea class="form-control" rows="15" id="changeTemplate" placeholder="Template Code" ng-model="templates.selectedChangeTemplate.code"></textarea>
+        <div ng-if="templates.selectedChangeTemplate.name">
+          <div class="form-group">
+            <label for="changeName" class="col-sm-2 control-label">Name</label>
+            <div class="col-sm-10">
+              <input type="text"
+                     class="form-control"
+                     id="changeName"
+                     placeholder="Kategorie"
+                     ng-model="templates.selectedChangeTemplate.name"
+                     autocomplete="off"
+                     ng-disabled="templates.selectedChangeTemplate.locked">
+            </div>
           </div>
-        </div>
 
-        <div class="form-group">
-          <div class="col-sm-offset-2 col-sm-10">
-            <button type="submit"
-                    class="btn btn-primary"
-                    ng-click="templates.changeTemplate()"
-                    ng-disabled="!templates.selectedChangeTemplate.name || templates.selectedChangeTemplate.locked">Speichern</button>
-            <button type="button"
-                    class="btn btn-danger"
-                    ng-click="templates.deleteTemplate()"
-                    ng-disabled="!templates.selectedChangeTemplate.name || templates.selectedChangeTemplate.locked">Löschen</button>
+          <div class="form-group">
+            <label for="changeCategory" class="col-sm-2 control-label">Kategorie</label>
+            <div class="col-sm-10">
+              <input type="text"
+                     class="form-control"
+                     id="changeCategory"
+                     placeholder="Kategorie"
+                     ng-model="templates.selectedChangeTemplate.category"
+                     autocomplete="off"
+                     ng-disabled="templates.selectedChangeTemplate.locked">
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="changeTemplate" class="col-sm-2 control-label">Template</label>
+            <div class="col-sm-10">
+              <textarea class="form-control"
+                        rows="15"
+                        id="changeTemplate"
+                        placeholder="Template Code"
+                        ng-model="templates.selectedChangeTemplate.code"
+                        ng-disabled="templates.selectedChangeTemplate.locked"></textarea>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <div class="col-sm-offset-2 col-sm-10">
+              <button type="submit"
+                      class="btn btn-primary"
+                      ng-click="templates.changeTemplate()"
+                      ng-disabled="!templates.selectedChangeTemplate.name || templates.selectedChangeTemplate.locked">Speichern</button>
+              <button type="button"
+                      class="btn btn-danger"
+                      ng-click="templates.deleteTemplate()"
+                      ng-disabled="!templates.selectedChangeTemplate.name || templates.selectedChangeTemplate.locked">Löschen</button>
+            </div>
           </div>
         </div>
       </form>

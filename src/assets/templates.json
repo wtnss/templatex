@@ -1,11 +1,28 @@
 {
   "templates": [{
-    "name": "Back2Root",
+    "name": "Allstars",
+    "category": "Uploads",
     "locked": true,
-    "code": "[CENTER]\n[IMG]http://back2root.net/logo.png[/IMG]\n●▬▬▬▬▬▬▬▬๑ .[B][FONT=Georgia][SIZE=7[COLOR=#00b3b3]N[/COLOR][/SIZE][/FONT][/B]\n[FONT=Georgia]EWSTIME[/FONT] ๑▬▬▬▬▬▬▬▬●\n[SIZE=5]\n[B][SIZE=6][B]###HEADLINE1###[/B][/SIZE][/B][/SIZE]\n[B][SIZE=4][B]###HEADLINE2###[/B][/SIZE][/B]\n[SIZE=5]\n[B][IMG]###IMG###[/IMG] [/B]\n\n[/SIZE]\n●▬▬▬▬▬▬▬▬๑◣_◢๑▬▬▬▬▬▬▬▬●[/CENTER]\n[bq=###SOURCE###]\n###TEXT###\n[/bq]\n[CENTER]\n●▬▬▬▬▬▬▬▬๑ .[B][FONT=Georgia][SIZE=7][COLOR=#00b3b3]K[/COLOR][/SIZE][/FONT][/B]\n[FONT=Georgia]ommentar[/FONT] ๑▬▬▬▬▬▬▬▬●\n###COMMENT###\n[/CENTER]"
+    "code": "[CENTER][IMG]http://fs5.directupload.net/images/151128/3dogpjxe.png[/IMG]\n\n[B]===========[COLOR=#2b8ee5]===[/COLOR]===#[/B]\n[SIZE=5][I]###Release###[/I][/SIZE]\n[B]======[COLOR=#2b8ee5]===[/COLOR]========#[/B]\n\n[IMG]###Bild URL###[/IMG]\n\n###Info Text###\n\n\n\n\n\n[IMG]http://saved.im/mtg5nta1zzfr/b2r_info.png[/IMG]\n[SPOILER=\"NFO\"][IMG]###NFO URL###[/IMG][/SPOILER]\n\n\n[IMG]http://saved.im/mtg5mje5mgxm/b2r_regeln.png[/IMG]\n\n1. Speedreport ist [B][COLOR=#2b8ee5]Pflicht[/COLOR][/B]!\n2. Fertigmeldung innerhalb von [U]24[/U] Stunden!\n3. Kein Rehack & Rescan des Servers\n4. Stro/Pub wird nach [I]3-5 [/I]Tagen gesäubert.\n5. [COLOR=#2b8ee5][I][B]Wer all diese Regeln einhält der kann mit weiteren Uploads von mir rechnen[/B][/I].[/COLOR]\n\n[IMG]http://saved.im/mtg5nta4dwcx/b2r_download.png[/IMG]\n\nUploader: [B]###Uploader###[/B] | Größe: ###Größe### | Location: ###Location### | Strodealer: ###Hacker###\nServerID: ###ServerID###\n\n\n\n==[COLOR=#2b8ee5][B]#[/B][/COLOR]FTP\n[HIDE][CODE]###FTP Link###[/CODE][/HIDE]\n\n\n\n==[COLOR=#2b8ee5][B]#[/B][/COLOR]SFDL\n[HIDE]###SFDL Link###[/HIDE]\n[/CENTER]"
+  }, {
+    "name": "Allstars Mixor",
+    "category": "Uploads",
+    "locked": true,
+    "code": "[CENTER][IMG]http://fs5.directupload.net/images/151128/3dogpjxe.png[/IMG]\n\n[B]===========[COLOR=#2b8ee5]===[/COLOR]===#[/B]\n[SIZE=5][I]###Titel###[/I][/SIZE]\n[B]======[COLOR=#2b8ee5]===[/COLOR]========#[/B]\n\n[SPOILER=\"Content\"]###Content|10###[/SPOILER]\n\n\n\n[IMG]http://saved.im/mtg5mje5mgxm/b2r_regeln.png[/IMG]\n\n1. Speedreport ist [B][COLOR=#2b8ee5]Pflicht[/COLOR][/B]!\n2. Fertigmeldung innerhalb von [U]24[/U] Stunden!\n3. Kein Rehack & Rescan des Servers\n4. Stro/Pub wird nach [I]3-5 [/I]Tagen gesäubert.\n5. [COLOR=#2b8ee5][I][B]Wer all diese Regeln einhält der kann mit weiteren Uploads von mir rechnen[/B][/I].[/COLOR]\n\n[IMG]http://saved.im/mtg5nta4dwcx/b2r_download.png[/IMG]\n\nUploader: [B]###Uploader###[/B] | Größe: ###Größe### | Location: ###Location### | Strodealer: ###Hacker###\nServerID: ###ServerID###\n\n\n\n==[COLOR=#2b8ee5][B]#[/B][/COLOR]FTP\n[HIDE][CODE]###FTP Link###[/CODE][/HIDE]\n\n\n\n[/CENTER]"
   }, {
     "name": "Simpel",
+    "category": "Uploads",
     "locked": true,
-    "code": "[CENTER]\n[B][SIZE=6][B]###HEADLINE1###[/B][/SIZE][/B]\n[B][SIZE=4][B]###HEADLINE2###[/B][/SIZE][/B]\n[/CENTER]\n\n[IMG]###IMG###[/IMG]\n\n[bq=###SOURCE###]\n###TEXT###\n[/bq]\n\n[CENTER]###COMMENT###[CENTER]"
+    "code": "[CENTER]\n[SIZE=5][B]###Release###[/B][/SIZE]\n\n[IMG]###Bild URL###[/IMG]\n\n###Info Text###\n\n\n[SPOILER=\"NFO\"][IMG]###NFO URL###[/IMG][/SPOILER]\n\nUploader: [B]###Uploader###[/B]\nHacker: [B]###Hacker###[/B]\nGröße: [B]###Größe###[/B]\nLocation: [B]###Location###[/B]\n\n[B]FTP[/B]\n[HIDE][CODE]###FTP Link###[/CODE][/HIDE]\n\n[B]SFDL[/B]\n[HIDE]###SFDL Link###[/HIDE]\n[/CENTER]"
+  }, {
+    "name": "Back2Root",
+    "category": "News",
+    "locked": true,
+    "code": "[CENTER]\n[IMG]http://back2root.net/logo.png[/IMG]\n●▬▬▬▬▬▬▬▬๑ .[B][FONT=Georgia][SIZE=7][COLOR=#00b3b3]N[/COLOR][/SIZE][/FONT][/B][FONT=Georgia]EWSTIME[/FONT] ๑▬▬▬▬▬▬▬▬●\n[SIZE=5]\n[B][SIZE=6][B]###Überschrift 1###[/B][/SIZE][/B][/SIZE]\n[B][SIZE=4][B]###Überschrift 2###[/B][/SIZE][/B]\n[SIZE=5]\n[B][IMG]###Bild URL###[/IMG] [/B]\n\n[/SIZE]\n●▬▬▬▬▬▬▬▬๑◣_◢๑▬▬▬▬▬▬▬▬●[/CENTER]\n[bq=###Quelle###]\n###News Text|3###\n[/bq]\n[CENTER]\n●▬▬▬▬▬▬▬▬๑ .[B][FONT=Georgia][SIZE=7][COLOR=#00b3b3]K[/COLOR][/SIZE][/FONT][/B][FONT=Georgia]ommentar[/FONT] ๑▬▬▬▬▬▬▬▬●\n###Kommentar|3###\n[/CENTER]"
+  }, {
+    "name": "Simpel",
+    "category": "News",
+    "locked": true,
+    "code": "[CENTER]\n[B][SIZE=6][B]###Überschrift 1###[/B][/SIZE][/B]\n[B][SIZE=4][B]###Überschrift 2###[/B][/SIZE][/B]\n[/CENTER]\n\n[IMG]###Bild URL###[/IMG]\n\n[bq=###Quelle###]\n###News Text|3###\n[/bq]\n\n[CENTER]###Kommentar|3###[CENTER]"
   }]
 }

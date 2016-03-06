@@ -2,38 +2,43 @@
   'use strict';
 
   angular
-    .module('newsmaker')
+    .module('tplx')
     .controller('TemplatesController', TemplatesController);
 
   /** @ngInject */
-  function TemplatesController(TemplatesService, TEMPLATE_CONSTANTS) {
+  function TemplatesController(TemplatesService) {
     var vm = this;
 
     vm.addTemplateDto = {};
     vm.selectedChangeTemplate = {};
     vm.alert = {};
-    vm.isCollapsedConstants = true;
-    vm.isCollapsedStorage = true;
+    vm.collapse = {
+      variables: true,
+      storage: true,
+      defaults: true
+    };
+    vm.defaults = false;
     vm.addTemplate = addTemplate;
     vm.changeTemplate = changeTemplate;
     vm.deleteTemplate = deleteTemplate;
     vm.getTemplates = getTemplates;
-    vm.getTemplateConstants = getTemplateConstants;
+    vm.getDefaultTemplateSettings = getDefaultTemplateSettings;
+    vm.changeDefaultTemplateSettings = changeDefaultTemplateSettings;
     vm.closeAlert = closeAlert;
 
     function addTemplate() {
-      TemplatesService.setLocalStorageTemplate(vm.addTemplateDto.name, vm.addTemplateDto.code);
+      TemplatesService.addLocalStorageTemplate(vm.addTemplateDto);
       createAlert('success', 'Template \"' + vm.addTemplateDto.name + '\" wurde gespeichert.');
       vm.addTemplateDto = {};
     }
 
     function changeTemplate() {
-      TemplatesService.setLocalStorageTemplate(vm.selectedChangeTemplate.name, vm.selectedChangeTemplate.code);
+      TemplatesService.changeLocalStorageTemplate(vm.selectedChangeTemplate);
       createAlert('success', 'Template \"' + vm.selectedChangeTemplate.name + '\" wurde gespeichert.');
     }
 
     function deleteTemplate() {
-      TemplatesService.removeLocalStorageTemplate(vm.selectedChangeTemplate.name);
+      TemplatesService.removeLocalStorageTemplate(vm.selectedChangeTemplate);
       createAlert('success', 'Template \"' + vm.selectedChangeTemplate.name + '\" wurde gelöscht.');
     }
 
@@ -41,9 +46,14 @@
       return TemplatesService.getTemplates();
     }
 
-    function getTemplateConstants() {
-      return TEMPLATE_CONSTANTS;
+    function getDefaultTemplateSettings() {
+      return TemplatesService.isDefaultTemplatesDisabled();
     }
+
+    function changeDefaultTemplateSettings() {
+      TemplatesService.setLocalStorageDefaultTemplates();
+    }
+
 
     function createAlert(type, message) {
       vm.alert = {
